@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #2c2c2c;
+  background-color: #fafaf8;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 60px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fafaf8;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-name {
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  color: #1a1a1a;
+}
+
+nav {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #555;
+  letter-spacing: 0.04em;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.current {
+  color: #1a1a1a;
+  border-bottom-color: #1a1a1a;
+}
+
+/* ── MAIN ── */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+/* ── HOME ── */
+.home-layout {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Sidebar (photo + contact) */
+.sidebar {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.contact-info a {
+  font-size: 0.88rem;
+  color: #555;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.contact-info a:hover {
+  color: #1a1a1a;
+  border-bottom-color: #1a1a1a;
+}
+
+/* Bio text */
+.bio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bio p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+/* ── RESEARCH / TEACHING ── */
+.section h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.section p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  header {
+    padding: 16px 24px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  main {
+    padding: 40px 24px;
+  }
+
+  .home-layout {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .sidebar {
+    flex: none;
+    width: 100%;
+  }
+
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+  }
+}

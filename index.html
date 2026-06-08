@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stina J. Lindgren</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="site-name">Stina J. Lindgren</div>
+    <nav>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#research" class="nav-link">Research</a>
+      <a href="#teaching" class="nav-link">Teaching</a>
+      <a href="CV 2026.pdf" target="_blank" class="nav-link">CV</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section id="home" class="section active">
+      <div class="home-layout">
+
+        <aside class="sidebar">
+          <img src="picture.jpg" alt="Stina J. Lindgren" class="profile-photo" />
+          <div class="contact-info">
+            <a href="mailto:stina.lindgren@gu.se">stina.lindgren@gu.se</a>
+            <a href="https://www.gu.se/om-universitetet/hitta-person/stinalindgren" target="_blank">University of Gothenburg profile</a>
+          </div>
+        </aside>
+
+        <div class="bio">
+          <p>I am a PhD student in Political Science at the University of Gothenburg since fall 2023. My research interests include comparative politics, political economy, and coalition formation. In my dissertation, I examine how political parties cooperate during times characterized by economic difficulties.</p>
+          <p>I have a BA in economics from Linköping university, a BA in political science from Uppsala university, and a MA in political science from Stockholm university.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="section">
+      <h2>Research</h2>
+      <p>Add text here.</p>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching" class="section">
+      <h2>Teaching</h2>
+      <p>Add text here.</p>
+    </section>
+
+  </main>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function showSection(id) {
+      sections.forEach(s => s.classList.remove('active'));
+      navLinks.forEach(l => l.classList.remove('current'));
+      const target = document.getElementById(id);
+      if (target) target.classList.add('active');
+      const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+      if (activeLink) activeLink.classList.add('current');
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        const hash = this.getAttribute('href');
+        if (hash && hash.startsWith('#')) {
+          showSection(hash.slice(1));
+        }
+      });
+    });
+
+    // Show section based on URL hash on load
+    const initialHash = window.location.hash.slice(1) || 'home';
+    showSection(initialHash);
+  </script>
+
+</body>
+</html>
