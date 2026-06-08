@@ -126,6 +126,36 @@ main {
 }
 
 /* ── RESEARCH / TEACHING ── */
+.subsection-header {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 16px;
+  margin-top: 4px;
+}
+
+.paper-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 0;
+}
+
+.paper-list li {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #333;
+  padding-left: 16px;
+  border-left: 2px solid #ccc;
+}
+
+.paper-status {
+  color: #777;
+  font-style: italic;
+}
+
 .section h2 {
   font-size: 1.3rem;
   font-weight: normal;
@@ -134,6 +164,37 @@ main {
   color: #1a1a1a;
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
+}
+
+.section p + p {
+  margin-top: 16px;
+}
+
+.section p + h3.subsection-header {
+  margin-top: 36px;
+}
+
+.course-list {
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.course-list li {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #333;
+}
+
+.course-sublist {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .section p {
